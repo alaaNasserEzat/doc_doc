@@ -5,6 +5,8 @@ import 'package:doc_doc/core/features/auth_feature/data/models/login_request.dar
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_cubit.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_state.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/widgets/forget_password_row.dart';
+import 'package:doc_doc/core/helper/extention.dart';
+import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +18,7 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-    final TextEditingController emailController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   @override
@@ -28,47 +30,47 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return  Form(
+    return Form(
       child: Column(
         spacing: 15,
         children: [
-CustomTextFormFiled(
-                hintText: "Email",
-                controller: emailController,
-              ),
-              CustomTextFormFiled(
-                hintText: "Password",
-                controller: passwordController,
-              ),
-              ForgetPasswordRow(),
-              SizedBox(height: 20),
-              BlocConsumer<LoginCubit, LoginState>(
-                listener: (context, state) {
-                  if (state is LoginFailure) {
-                    print("Login Failure: ${state.message.getAllErrorMessage()}");
-                    showErrorDialog(context, state.message.getAllErrorMessage());
-                  }
-                  if (state is LoginSuccess) {
-                    showSuccessSnakBar(context, "Login successful!");
-                  }
-                },
-                builder: (context, state) {
-                  return state is LoginLoading
-                      ? CircularProgressIndicator()
-                      : CustomBtn(
-                          onPressed: () {
-                            context.read<LoginCubit>().login(
-                              LoginRequest(
-                                email: emailController.text,
-                                password: passwordController.text,
-                              ),
-                            );
-                          },
-                          text: "Login",
+          CustomTextFormFiled(hintText: "Email", controller: emailController),
+          CustomTextFormFiled(
+            hintText: "Password",
+            controller: passwordController,
+          ),
+          ForgetPasswordRow(),
+          SizedBox(height: 20),
+          BlocConsumer<LoginCubit, LoginState>(
+            listener: (context, state) {
+              if (state is LoginFailure) {
+                print(
+                  "Login Failure: ${state.message.getAllErrorMessage() ?? "fffffffff"}",
+                );
+                showErrorDialog(context, state.message.getAllErrorMessage());
+              }
+              if (state is LoginSuccess) {
+                showSuccessSnakBar(context, "Login successful!");
+                context.pushReplacementNamed(Routes.homeScreen);
+              }
+            },
+            builder: (context, state) {
+              return state is LoginLoading
+                  ? CircularProgressIndicator()
+                  : CustomBtn(
+                      onPressed: () {
+                        context.read<LoginCubit>().login(
+                          LoginRequest(
+                            email: emailController.text,
+                            password: passwordController.text,
+                          ),
                         );
-                },
-              ),
-              SizedBox(height: 20),
+                      },
+                      text: "Login",
+                    );
+            },
+          ),
+          SizedBox(height: 20),
         ],
       ),
     );

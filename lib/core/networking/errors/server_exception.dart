@@ -32,11 +32,10 @@ void handelDioException(DioException e) {
         case 422:
         case 400:
         case 401:
+          final data = e.response?.data["data"];
+
           throw ServerException(
-            errorModel: ErrorModel(
-              message: e.response!.data["message"],
-              errors: e.response?.data["data"],
-            ),
+            errorModel: ErrorModel.fromJson(e.response!.data),
           );
       }
     case DioExceptionType.cancel:
@@ -45,6 +44,7 @@ void handelDioException(DioException e) {
       throw ServerException(errorModel: ErrorModel(message: "unknown"));
   }
 }
+
 ErrorModel getErrorModel(ErrorModel error) {
   return ErrorModel(message: error.message, errors: error.errors);
 }
