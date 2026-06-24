@@ -32,8 +32,6 @@ void handelDioException(DioException e) {
         case 422:
         case 400:
         case 401:
-          final data = e.response?.data["data"];
-
           throw ServerException(
             errorModel: ErrorModel.fromJson(e.response!.data),
           );

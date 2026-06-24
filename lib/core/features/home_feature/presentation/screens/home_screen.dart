@@ -1,7 +1,9 @@
-import 'package:doc_doc/core/images/app_assets.dart';
-import 'package:doc_doc/core/utils/app_text_styles.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/widgets/booking_widget.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/widgets/doctor_recomendation_list.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/widgets/doctor_specialest_row.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/widgets/see_all_row.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/widgets/welcom_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,28 +11,22 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Row(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            spacing: 15,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  Text("hi Alaa", style: AppTextStyles.interBold18Black),
-                  Text(
-                    "How Are you Today",
-                    style: AppTextStyles.interRegular12gray61,
-                  ),
-                ],
-              ),
-              Spacer(),
-              CircleAvatar(
-                radius: 32,
-                backgroundColor: Color(0xffF5F5F5),
-                child: SvgPicture.asset(AppAssets.notificationIcon),
-              ),
+              WelcomWidget(),
+              BookingWidget(),
+              SeeAllRow(text: "Doctor Speciality"),
+              DoctorSpecialestRow(),
+              SeeAllRow(text: "Recommendation Doctor"),
+              DoctorRecomendationList(),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
