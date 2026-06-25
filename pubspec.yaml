@@ -40,6 +40,8 @@ dependencies:
   dart_either: ^2.1.0
   flutter_bloc: ^9.1.1
   get_it: ^9.2.1
+  flutter_secure_storage: ^10.3.1
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:
