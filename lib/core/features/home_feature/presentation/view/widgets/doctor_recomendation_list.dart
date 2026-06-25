@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/home_feature/presentation/widgets/doctor_recommendation_widget.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_recommendation_widget.dart';
 import 'package:flutter/material.dart';
 
 class DoctorRecomendationList extends StatelessWidget {

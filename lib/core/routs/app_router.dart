@@ -3,7 +3,10 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/onb
 import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/sign_up_screen.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_cubit.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/screens/home_screen.dart';
+import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_specialest_screen.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/helper/di.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +18,21 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnbordingScreen());
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<HomeCubit>()..getSpecializations(),
+            child: const HomeScreen(),
+          ),
+        );
+      case Routes.doctorSpecialestScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<HomeCubit>()..getSpecializations(),
+              child: DoctorSpecialestScreen(),
+            );
+          },
+        );
 
       case Routes.loginScreen:
         return MaterialPageRoute(

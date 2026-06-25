@@ -15,18 +15,21 @@ class DoctorSpecialestWidget extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: CircleAvatar(
-            radius: 32,
-            backgroundColor: AppColor.whiteff,
-            child: Image.asset(image),
+    return Padding(
+      padding: const EdgeInsets.only(right: 16.0),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: onTap,
+            child: CircleAvatar(
+              radius: 32,
+              backgroundColor: AppColor.whiteff,
+              child: Image.asset(image),
+            ),
           ),
-        ),
-        Text(text, style: AppTextStyles.interRegular12black),
-      ],
+          Text(text, style: AppTextStyles.interRegular12black),
+        ],
+      ),
     );
   }
 }
