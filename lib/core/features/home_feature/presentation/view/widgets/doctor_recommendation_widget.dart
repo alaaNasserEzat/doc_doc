@@ -1,10 +1,11 @@
+import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class DoctorRecommendationWidget extends StatelessWidget {
-  const DoctorRecommendationWidget({super.key});
-
+  const DoctorRecommendationWidget({super.key, required this.doctor});
+  final Doctor doctor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,24 +17,28 @@ class DoctorRecommendationWidget extends StatelessWidget {
           Column(
             spacing: 5,
             children: [
-              Text("Dr. Randy Wigham", style: AppTextStyles.interBold18Black),
+              Text(doctor.name ?? "", style: AppTextStyles.interBold18Black),
               Row(
+                spacing: 15,
                 children: [
-                  Text("General  ", style: AppTextStyles.interMedium12Gray75),
-                  Container(width: 2, height: 3, color: AppColor.gray61),
                   Text(
-                    "  RSUD Gatot Subroto",
+                    "${doctor.specialization?.name ?? ""}",
+                    style: AppTextStyles.interMedium12Gray75,
+                  ),
+                  Container(color: AppColor.grey, width: 2, height: 30),
+                  Text(
+                    "${doctor.address}",
                     style: AppTextStyles.interMedium12Gray75,
                   ),
                 ],
               ),
               Row(
                 children: [
-                  Icon(Icons.star, color: AppColor.amber),
                   Text(
-                    " 4.8 (4,279 reviews)",
+                    "${doctor.appointPrice}",
                     style: AppTextStyles.interMedium12Gray75,
                   ),
+                  Text(" \$", style: TextStyle(color: AppColor.amber)),
                 ],
               ),
             ],

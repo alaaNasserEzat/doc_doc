@@ -1,12 +1,9 @@
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/booking_widget.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_recomendation_list.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_bloc_builder.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_bloc_builder.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_list.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/see_all_row.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/welcom_widget.dart';
 import 'package:doc_doc/core/helper/extention.dart';
-import 'package:doc_doc/core/networking/api_constants.dart';
-import 'package:doc_doc/core/routs/app_router.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               ),
               DoctorSpecialestBlocBuilder(),
               SeeAllRow(text: "Recommendation Doctor"),
-              DoctorRecomendationList(),
+              DoctorBlocBuilder(),
             ],
           ),
         ),
