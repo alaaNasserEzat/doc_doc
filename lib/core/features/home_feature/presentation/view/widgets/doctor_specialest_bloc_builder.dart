@@ -12,7 +12,7 @@ class DoctorSpecialestBlocBuilder extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return state is HomeLoading
-            ? CircularProgressIndicator()
+            ? Center(child: CircularProgressIndicator())
             : state is HomeSuccess
             ? DoctorSpecialestList(response: state.response)
             : Text("error");

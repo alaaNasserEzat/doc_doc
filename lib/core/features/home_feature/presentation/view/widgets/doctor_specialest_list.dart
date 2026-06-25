@@ -17,7 +17,7 @@ class DoctorSpecialestList extends StatelessWidget {
         itemBuilder: (context, index) {
           return DoctorSpecialestWidget(
             text: response.data![index].name ?? "",
-            image: AppAssets.brain,
+            image: specialityImages[index],
           );
         },
       ),

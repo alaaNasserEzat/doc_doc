@@ -11,33 +11,27 @@ class DoctorSpecialestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              BlocBuilder<HomeCubit, HomeState>(
-                builder: (context, state) {
-                  return state is HomeLoading
-                      ? Center(child: CircularProgressIndicator())
-                      : state is HomeSuccess
-                      ? Wrap(
-                          spacing: 15,
-                          children: List.generate(state.response.data!.length, (
-                            index,
-                          ) {
-                            final data = state.response.data;
-                            return DoctorSpecialestWidget(
-                              text: data![index].name ?? "",
-                              image: AppAssets.brain,
-                            );
-                          }),
-                        )
-                      : Text("error");
-                },
-              ),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: BlocBuilder<HomeCubit, HomeState>(
+          builder: (context, state) {
+            return state is HomeLoading
+                ? Center(child: CircularProgressIndicator())
+                : state is HomeSuccess
+                ? Wrap(
+                    spacing: 15,
+                    children: List.generate(state.response.data!.length, (
+                      index,
+                    ) {
+                      final data = state.response.data;
+                      return DoctorSpecialestWidget(
+                        text: data![index].name ?? "",
+                        image: specialityImages[index],
+                      );
+                    }),
+                  )
+                : Text("error");
+          },
         ),
       ),
     );
