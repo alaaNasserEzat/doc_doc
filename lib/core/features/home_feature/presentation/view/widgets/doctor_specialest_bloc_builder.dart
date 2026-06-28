@@ -1,4 +1,5 @@
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_list.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/skeletonizer_specialest_list.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class DoctorSpecialestBlocBuilder extends StatelessWidget {
       },
       builder: (context, state) {
         return state is HomeLoading
-            ? Center(child: CircularProgressIndicator())
+            ? SkeletonizerSpecialestList()
             : state is HomeSuccess
             ? DoctorSpecialestList(specializatinDataList: state.response.data!)
             : Text("error");

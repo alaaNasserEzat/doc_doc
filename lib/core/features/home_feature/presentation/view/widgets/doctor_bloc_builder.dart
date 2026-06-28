@@ -1,4 +1,5 @@
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_recomendation_list.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_list.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/skeletonizer_doctor_list.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,9 @@ class DoctorBlocBuilder extends StatelessWidget {
       },
       builder: (context, state) {
         return state is HomeLoading
-            ? Center(child: CircularProgressIndicator())
+            ? SkeletonizerDoctorList()
             : state is GetDoctorSuccess
-            ?
-              //Text(state.doctors.first.name!)
-              DoctorRecomendationList(doctors: state.doctors)
+            ? DoctorList(doctors: state.doctors)
             : state is HomeError
             ? Text(state.errorModel.getAllErrorMessage())
             : SizedBox();

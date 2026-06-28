@@ -1,5 +1,5 @@
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_recommendation_widget.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class DoctorsScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: doctors.length,
         itemBuilder: (context, index) {
-          return DoctorRecommendationWidget(doctor: doctors[index]);
+          return DoctorWidget(doctor: doctors[index]);
         },
       ),
     );

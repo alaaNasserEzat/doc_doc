@@ -1,6 +1,7 @@
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class DoctorSpecialestWidget extends StatelessWidget {
   const DoctorSpecialestWidget({
@@ -23,15 +24,17 @@ class DoctorSpecialestWidget extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: onTap,
-            child: CircleAvatar(
-              radius: 30,
-              backgroundColor: isSelected
-                  ? AppColor.primaryColor
-                  : AppColor.whiteff,
+            child: Skeleton.leaf(
               child: CircleAvatar(
-                radius: 28,
-                backgroundColor: AppColor.whiteff,
-                child: Image.asset(image, width: 30, height: 30),
+                radius: 30,
+                backgroundColor: isSelected
+                    ? AppColor.primaryColor
+                    : AppColor.whiteff,
+                child: CircleAvatar(
+                  radius: 28,
+                  backgroundColor: AppColor.whiteff,
+                  child: Image.asset(image, width: 30, height: 30),
+                ),
               ),
             ),
           ),

@@ -3,8 +3,8 @@ import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class DoctorRecommendationWidget extends StatelessWidget {
-  const DoctorRecommendationWidget({super.key, required this.doctor});
+class DoctorWidget extends StatelessWidget {
+  const DoctorWidget({super.key, required this.doctor});
   final Doctor doctor;
   @override
   Widget build(BuildContext context) {

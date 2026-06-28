@@ -29,7 +29,6 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
               DoctorSpecialestBlocBuilder(),
-              SeeAllRow(text: "Recommendation Doctor"),
               DoctorBlocBuilder(),
             ],
           ),

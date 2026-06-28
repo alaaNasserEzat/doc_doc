@@ -15,7 +15,7 @@ class DoctorSpecialestScreen extends StatefulWidget {
 }
 
 class _DoctorSpecialestScreenState extends State<DoctorSpecialestScreen> {
-  int selectedIndex = 0;
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
