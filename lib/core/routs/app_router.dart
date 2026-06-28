@@ -3,8 +3,10 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/onb
 import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/sign_up_screen.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_cubit.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
+import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_specialest_screen.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctors_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/helper/di.dart';
@@ -22,6 +24,14 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<HomeCubit>()..getSpecializations(),
             child: const HomeScreen(),
+          ),
+        );
+      case Routes.doctorsScreen:
+        final List<Doctor> doctors = settings.arguments as List<Doctor>;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<HomeCubit>()..getSpecializations(),
+            child: DoctorsScreen(doctors: doctors),
           ),
         );
       case Routes.doctorSpecialestScreen:

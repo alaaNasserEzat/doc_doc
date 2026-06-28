@@ -3,6 +3,7 @@ import 'package:doc_doc/core/networking/api_concumer.dart';
 import 'package:doc_doc/core/networking/api_interceptor.dart';
 
 import 'package:doc_doc/core/networking/errors/server_exception.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioConcumer extends ApiConcumer {
   final Dio dio;
@@ -12,12 +13,23 @@ class DioConcumer extends ApiConcumer {
 
     dio.interceptors.add(ApiInterceptor());
     dio.interceptors.add(
-      LogInterceptor(
-        request: true,
-        responseBody: true,
+      PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
+        responseBody: true,
+        responseHeader: false,
         error: true,
+        compact: true,
+        maxWidth: 90,
+
+        filter: (options, args) {
+          // don't print requests with uris containing '/posts'
+          if (options.path.contains('/posts')) {
+            return false;
+          }
+          // don't print responses with unit8 list data
+          return !args.isResponse || !args.hasUint8ListData;
+        },
       ),
     );
   }

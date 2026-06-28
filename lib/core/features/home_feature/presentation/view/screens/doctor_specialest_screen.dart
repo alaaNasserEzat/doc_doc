@@ -1,19 +1,30 @@
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_widget.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
+import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
+import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DoctorSpecialestScreen extends StatelessWidget {
+class DoctorSpecialestScreen extends StatefulWidget {
   const DoctorSpecialestScreen({super.key});
 
+  @override
+  State<DoctorSpecialestScreen> createState() => _DoctorSpecialestScreenState();
+}
+
+class _DoctorSpecialestScreenState extends State<DoctorSpecialestScreen> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: BlocBuilder<HomeCubit, HomeState>(
+          buildWhen: (previous, current) {
+            return current is HomeSuccess || current is HomeSuccess;
+          },
           builder: (context, state) {
             return state is HomeLoading
                 ? Center(child: CircularProgressIndicator())
@@ -27,6 +38,16 @@ class DoctorSpecialestScreen extends StatelessWidget {
                       return DoctorSpecialestWidget(
                         text: data![index].name ?? "",
                         image: specialityImages[index],
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                          context.pushNamed(
+                            Routes.doctorsScreen,
+                            arguments: data[index].doctors,
+                          );
+                        },
+                        isSelected: index == selectedIndex,
                       );
                     }),
                   )

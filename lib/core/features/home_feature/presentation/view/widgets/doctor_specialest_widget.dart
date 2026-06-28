@@ -8,10 +8,12 @@ class DoctorSpecialestWidget extends StatelessWidget {
     required this.text,
     required this.image,
     this.onTap,
+    required this.isSelected,
   });
   final String text;
   final String image;
   final void Function()? onTap;
+  final bool isSelected;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,12 +24,23 @@ class DoctorSpecialestWidget extends StatelessWidget {
           GestureDetector(
             onTap: onTap,
             child: CircleAvatar(
-              radius: 28,
-              backgroundColor: AppColor.whiteff,
-              child: Image.asset(image, width: 30, height: 30),
+              radius: 30,
+              backgroundColor: isSelected
+                  ? AppColor.primaryColor
+                  : AppColor.whiteff,
+              child: CircleAvatar(
+                radius: 28,
+                backgroundColor: AppColor.whiteff,
+                child: Image.asset(image, width: 30, height: 30),
+              ),
             ),
           ),
-          Text(text, style: AppTextStyles.interRegular12black),
+          Text(
+            text,
+            style: AppTextStyles.interRegular12black.copyWith(
+              fontSize: isSelected ? 15 : 12,
+            ),
+          ),
         ],
       ),
     );

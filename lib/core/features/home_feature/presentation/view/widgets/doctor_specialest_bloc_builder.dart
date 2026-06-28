@@ -10,11 +10,14 @@ class DoctorSpecialestBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
+      buildWhen: (previous, current) {
+        return current is HomeSuccess || current is HomeLoading;
+      },
       builder: (context, state) {
         return state is HomeLoading
             ? Center(child: CircularProgressIndicator())
             : state is HomeSuccess
-            ? DoctorSpecialestList(response: state.response)
+            ? DoctorSpecialestList(specializatinDataList: state.response.data!)
             : Text("error");
       },
     );
