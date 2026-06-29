@@ -5,6 +5,7 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_details_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_specialest_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctors_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
@@ -43,7 +44,11 @@ class AppRouter {
             );
           },
         );
-
+      case Routes.doctorDetailsScreen:
+        final Doctor doctor = settings.arguments as Doctor;
+        return MaterialPageRoute(
+          builder: (_) => DoctorDetailsScreen(doctor: doctor),
+        );
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
