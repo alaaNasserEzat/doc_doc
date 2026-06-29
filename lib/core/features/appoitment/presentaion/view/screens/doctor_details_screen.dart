@@ -1,9 +1,9 @@
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/book_section.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/choose_time_section.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/book_section.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/choose_time_section.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_information.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_top_bar.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/select_date_section.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/doctor_top_bar.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/select_date_section.dart';
 import 'package:flutter/material.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
@@ -29,7 +29,7 @@ class DoctorDetailsScreen extends StatelessWidget {
               lastTime: doctor.endTime ?? "",
             ),
             Spacer(),
-            BookSection(text: doctor.appointPrice.toString()),
+            BookSection(doctor: doctor),
           ],
         ),
       ),

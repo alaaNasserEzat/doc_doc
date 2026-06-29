@@ -1,3 +1,4 @@
+import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/login_screen.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/onbording_screen.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/sign_up_screen.dart';
@@ -5,7 +6,7 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_details_screen.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/screens/doctor_details_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_specialest_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctors_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
@@ -47,7 +48,10 @@ class AppRouter {
       case Routes.doctorDetailsScreen:
         final Doctor doctor = settings.arguments as Doctor;
         return MaterialPageRoute(
-          builder: (_) => DoctorDetailsScreen(doctor: doctor),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<AppointmentCubit>(),
+            child: DoctorDetailsScreen(doctor: doctor),
+          ),
         );
       case Routes.loginScreen:
         return MaterialPageRoute(

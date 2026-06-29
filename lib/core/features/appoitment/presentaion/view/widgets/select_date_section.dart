@@ -1,6 +1,8 @@
+import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class SelectDateSection extends StatefulWidget {
@@ -11,18 +13,15 @@ class SelectDateSection extends StatefulWidget {
 }
 
 class _SelectDateSectionState extends State<SelectDateSection> {
-  DateTime selectedDate = DateTime.now();
   Future<void> pickDate() async {
     final pickedDate = await showDatePicker(
       context: context,
-      initialDate: selectedDate,
+      initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime(2030),
     );
     if (pickedDate != null) {
-      setState(() {
-        selectedDate = pickedDate;
-      });
+      BlocProvider.of<AppointmentCubit>(context).selectDate(pickedDate);
     }
   }
 
@@ -37,9 +36,12 @@ class _SelectDateSectionState extends State<SelectDateSection> {
           Text("Select Date", style: AppTextStyles.interBold18Black),
 
           TextFormField(
+            controller: BlocProvider.of<AppointmentCubit>(
+              context,
+            ).dateController,
             readOnly: true,
             decoration: InputDecoration(
-              hintText: DateFormat('yyyy-MM-dd').format(selectedDate),
+              hintText: DateTime.now().toString().substring(0, 10),
               hintStyle: TextStyle(color: AppColor.lightGrey3),
               fillColor: Color(0xfff2f4f7),
               filled: true,

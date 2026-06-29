@@ -1,6 +1,9 @@
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/time_slot_item.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/time_slot_item.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appointment_state.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class ChooseTimeSection extends StatefulWidget {
@@ -30,7 +33,7 @@ class _ChooseTimeSectionState extends State<ChooseTimeSection> {
   }
 
   late List<String> times;
-  String? selectedTime;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -52,13 +55,24 @@ class _ChooseTimeSectionState extends State<ChooseTimeSection> {
             spacing: 12,
             runSpacing: 12,
             children: times.map((time) {
-              return TimeSlotItem(
-                time: time,
-                selected: selectedTime == time,
-                onTap: () {
-                  setState(() {
-                    selectedTime = time;
-                  });
+              return BlocBuilder<AppointmentCubit, AppointmentState>(
+                builder: (context, state) {
+                  return TimeSlotItem(
+                    time: time,
+                    selected:
+                        BlocProvider.of<AppointmentCubit>(
+                          context,
+                        ).selectedTime ==
+                        time,
+                    onTap: () {
+                      // setState(() {
+                      //   selectedTime = time;
+                      // });
+                      BlocProvider.of<AppointmentCubit>(
+                        context,
+                      ).selectTime(time);
+                    },
+                  );
                 },
               );
             }).toList(),

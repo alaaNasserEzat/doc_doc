@@ -6,4 +6,6 @@ class ApiConstants {
   static const String getProfile = "user/profile";
   static const String updateProfile = "user/update";
   static const String searchDoctor = "doctor/doctor-search";
+  static const String getAllMyAppointments = 'appointment/index';
+  static const String storeAppointment = 'appointment/store';
 }

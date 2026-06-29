@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:doc_doc/core/features/appoitment/data/data_source/appoitment_remote_data_source/appoitment_remote_data_source.dart';
+import 'package:doc_doc/core/features/appoitment/data/repo/appointment_repo.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/features/auth_feature/data/data_source/auth_remote_data_source.dart';
 import 'package:doc_doc/core/features/auth_feature/data/repositories/auth_repo.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_cubit.dart';
@@ -25,4 +28,14 @@ void setupGetIt() {
   getIt.registerLazySingleton(() => HomeRemoteDataSource(apiConcumer: getIt()));
   getIt.registerLazySingleton(() => HomeRepo(homeRemoteDataSource: getIt()));
   getIt.registerFactory(() => HomeCubit(getIt()));
+
+  //appointment
+  //home
+  getIt.registerLazySingleton(
+    () => AppoitmentRemoteDataSource(apiConcumer: getIt()),
+  );
+  getIt.registerLazySingleton(
+    () => AppointmentRepo(appoitmentRemoteDataSource: getIt()),
+  );
+  getIt.registerFactory(() => AppointmentCubit(getIt()));
 }
