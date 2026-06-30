@@ -51,7 +51,7 @@ class _LoginFormState extends State<LoginForm> {
               }
               if (state is LoginSuccess) {
                 showSuccessSnakBar(context, "Login successful!");
-                context.pushReplacementNamed(Routes.homeScreen);
+                context.pushReplacementNamed(Routes.bottomNavigationBar);
               }
             },
             builder: (context, state) {

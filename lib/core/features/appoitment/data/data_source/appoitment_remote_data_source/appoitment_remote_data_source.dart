@@ -1,5 +1,6 @@
 import 'package:doc_doc/core/features/appoitment/data/models/appointment_reponse.dart';
 import 'package:doc_doc/core/features/appoitment/data/models/appointment_request_body.dart';
+import 'package:doc_doc/core/features/appoitment/data/models/get_all_appointment_response.dart';
 import 'package:doc_doc/core/networking/api_concumer.dart';
 import 'package:doc_doc/core/networking/api_constants.dart';
 
@@ -16,5 +17,10 @@ class AppoitmentRemoteDataSource {
       data: appointmentRequestBody.toJson(),
     );
     return AppointmentResponse.fromJson(res);
+  }
+
+  Future<GetAllAppointmentsResponse> getAllAppointment() async {
+    final res = await apiConcumer.get(ApiConstants.getAllMyAppointments);
+    return GetAllAppointmentsResponse.fromJson(res);
   }
 }

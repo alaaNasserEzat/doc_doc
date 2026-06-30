@@ -35,4 +35,19 @@ class AppointmentCubit extends Cubit<AppointmentState> {
       },
     );
   }
+
+  getAllAppointment() async {
+    emit(GetAppointmentLoading());
+
+    final result = await repo.getAllAppointment();
+
+    result.fold(
+      ifLeft: (e) {
+        emit(GetAllAppointmentFailure(e));
+      },
+      ifRight: (result) {
+        emit(GetAllAppointmentSuccess(result));
+      },
+    );
+  }
 }

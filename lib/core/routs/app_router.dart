@@ -7,6 +7,7 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/screens/doctor_details_screen.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/screens/bottom_naviegation_bar.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_specialest_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctors_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
@@ -21,6 +22,8 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnbordingScreen());
+      case Routes.bottomNavigationBar:
+        return MaterialPageRoute(builder: (_) => BottomNavBarView());
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -41,6 +44,16 @@ class AppRouter {
           builder: (_) {
             return BlocProvider(
               create: (context) => getIt<HomeCubit>()..getSpecializations(),
+              child: DoctorSpecialestScreen(),
+            );
+          },
+        );
+      case Routes.getAllAppointmentScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) =>
+                  getIt<AppointmentCubit>()..getAllAppointment(),
               child: DoctorSpecialestScreen(),
             );
           },

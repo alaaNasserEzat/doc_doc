@@ -1,4 +1,5 @@
 import 'package:doc_doc/core/features/appoitment/data/models/appointment_reponse.dart';
+import 'package:doc_doc/core/features/appoitment/data/models/get_all_appointment_response.dart';
 import 'package:doc_doc/core/networking/errors/models/error_model.dart';
 
 abstract class AppointmentState {}
@@ -17,6 +18,21 @@ class AppointmentFailure extends AppointmentState {
   final ErrorModel error;
 
   AppointmentFailure(this.error);
+}
+
+//get all appointment
+class GetAppointmentLoading extends AppointmentState {}
+
+class GetAllAppointmentSuccess extends AppointmentState {
+  final GetAllAppointmentsResponse response;
+
+  GetAllAppointmentSuccess(this.response);
+}
+
+class GetAllAppointmentFailure extends AppointmentState {
+  final ErrorModel error;
+
+  GetAllAppointmentFailure(this.error);
 }
 
 class SelectDateState extends AppointmentState {}
