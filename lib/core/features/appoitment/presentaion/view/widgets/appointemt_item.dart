@@ -1,5 +1,8 @@
 import 'package:doc_doc/core/features/appoitment/data/models/appointment_data.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/white_shadwo_container.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
+import 'package:doc_doc/core/utils/app_color.dart';
+import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AppointemtItem extends StatelessWidget {
@@ -7,23 +10,57 @@ class AppointemtItem extends StatelessWidget {
   final AppointmentData appointmentData;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              CircleAvatar(child: Image.asset(AppAssets.doctor, height: 110)),
-              Column(
-                children: [
-                  Text(appointmentData.doctor.name ?? ""),
-                  Text(appointmentData.doctor.specialization!.name ?? ""),
-                  Text(appointmentData.appointmentEndTime),
-                  Text(appointmentData.appointmentTime),
-                ],
-              ),
-            ],
-          ),
-        ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: WhiteShadwoContainer(
+        child: Column(
+          spacing: 10,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(child: Image.asset(AppAssets.doctor, height: 107)),
+                SizedBox(width: 30),
+                Column(
+                  children: [
+                    Text(
+                      appointmentData.doctor.name ?? "",
+                      style: AppTextStyles.interBold18Black,
+                    ),
+                    Text(
+                      appointmentData.doctor.specialization!.name ?? "",
+                      style: AppTextStyles.interMedium12Gray75.copyWith(
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+
+            Divider(color: AppColor.lightGrey),
+
+            Row(
+              spacing: 5,
+              children: [
+                Icon(Icons.calendar_month, color: AppColor.grey, size: 15),
+                Text(
+                  "   ${appointmentData.appointmentEndTime.substring(0, appointmentData.appointmentTime.length - 7)}",
+                  style: AppTextStyles.interMedium12Gray75,
+                ),
+              ],
+            ),
+            Row(
+              spacing: 5,
+              children: [
+                Icon(Icons.access_time, color: AppColor.grey, size: 15),
+                Text(
+                  "at ${appointmentData.appointmentTime.substring(appointmentData.appointmentTime.length - 7)}",
+                  style: AppTextStyles.interMedium12Gray75,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
