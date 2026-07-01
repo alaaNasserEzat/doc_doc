@@ -14,4 +14,5 @@ class AppColor {
   static const Color white = Colors.white;
   static const Color whiteff = Color(0xffF4F8FF);
   static const Color amber = Colors.amber;
+  static const Color textfieldfillColor = Color(0xffFDFDFF);
 }

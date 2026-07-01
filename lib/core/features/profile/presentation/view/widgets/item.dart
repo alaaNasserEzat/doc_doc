@@ -14,21 +14,24 @@ class Item extends StatelessWidget {
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      spacing: 15,
-      children: [
-        Icon(icon, size: 24, color: AppColor.primaryColor),
-        Text(text, style: AppTextStyles.interMedium12Gray75),
-        Spacer(),
-        IconButton(
-          icon: Icon(
-            Icons.arrow_forward_ios,
-            size: 16,
-            color: AppColor.primaryColor,
-          ),
-          onPressed: onTap,
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          spacing: 15,
+          children: [
+            Icon(icon, size: 24, color: AppColor.primaryColor),
+            Text(text, style: AppTextStyles.interMedium12Gray75),
+            Spacer(),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+              color: AppColor.primaryColor,
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
