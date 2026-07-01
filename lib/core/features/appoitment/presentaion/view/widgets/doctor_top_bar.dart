@@ -1,3 +1,4 @@
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/custom_blue_container.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
@@ -13,17 +14,7 @@ class DoctorTopBar extends StatelessWidget {
       alignment: AlignmentGeometry.bottomCenter,
       clipBehavior: Clip.none,
       children: [
-        Container(
-          height: 150,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: AppColor.primaryColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(16),
-              bottomRight: Radius.circular(16),
-            ),
-          ),
-        ),
+        CustomBlueContainer(),
         Positioned(
           top: 10,
           left: 10,

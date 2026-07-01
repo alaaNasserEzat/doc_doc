@@ -2,6 +2,8 @@ import 'package:doc_doc/core/features/appoitment/presentaion/view/screens/all_ap
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
+import 'package:doc_doc/core/features/profile/presentation/view/screens/profile_screen.dart';
+import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:doc_doc/core/helper/di.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
   final List<IconData> icons = [
     Icons.home,
     Icons.date_range_outlined,
-    Icons.home,
+    Icons.person_outlined,
   ];
 
   final List<String> lables = ['home', 'appointments', 'profile'];
@@ -33,7 +35,10 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
       create: (context) => getIt<AppointmentCubit>()..getAllAppointment(),
       child: const AllAppointmentScreen(),
     ),
-    HomeScreen(),
+    BlocProvider(
+      create: (context) => getIt<ProfileCubit>()..getProfile(),
+      child: ProfileScreen(),
+    ),
   ];
 
   int currentIndx = 0;

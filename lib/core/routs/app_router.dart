@@ -12,6 +12,8 @@ import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doc
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctors_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
+import 'package:doc_doc/core/features/profile/presentation/view/screens/profile_screen.dart';
+import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:doc_doc/core/helper/di.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +57,15 @@ class AppRouter {
               create: (context) =>
                   getIt<AppointmentCubit>()..getAllAppointment(),
               child: DoctorSpecialestScreen(),
+            );
+          },
+        );
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<ProfileCubit>()..getProfile(),
+              child: const ProfileScreen(),
             );
           },
         );

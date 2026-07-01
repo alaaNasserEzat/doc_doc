@@ -9,6 +9,9 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_
 import 'package:doc_doc/core/features/home_feature/data/data_source/home_remote_data_source.dart';
 import 'package:doc_doc/core/features/home_feature/data/repo/home_repo.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
+import 'package:doc_doc/core/features/profile/data/data_source/profile_remote_data_source.dart';
+import 'package:doc_doc/core/features/profile/data/repo/profile_repo.dart';
+import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:doc_doc/core/networking/api_concumer.dart';
 import 'package:doc_doc/core/networking/dio_concumer.dart';
 import 'package:get_it/get_it.dart';
@@ -38,4 +41,13 @@ void setupGetIt() {
     () => AppointmentRepo(appoitmentRemoteDataSource: getIt()),
   );
   getIt.registerFactory(() => AppointmentCubit(getIt()));
+
+  //profile
+  getIt.registerLazySingleton(
+    () => ProfileRemoteDataSource(apiConsumer: getIt()),
+  );
+  getIt.registerLazySingleton(
+    () => ProfileRepo(profileRemoteDataSource: getIt()),
+  );
+  getIt.registerFactory(() => ProfileCubit(getIt()));
 }
