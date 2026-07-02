@@ -4,17 +4,21 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
-  SignUpCubit(this.authRepo):super(SignUpInitial());
-final AuthRepo authRepo; 
-  signUp(SignUpRequestBody signUpRequest)async{
+  SignUpCubit(this.authRepo) : super(SignUpInitial());
+  final AuthRepo authRepo;
+  final int selectedGender = 0;
+
+  signUp(SignUpRequestBody signUpRequest) async {
     emit(SignUpLoading());
- final res=await authRepo.signUp(signUpRequest);
+    final res = await authRepo.signUp(signUpRequest);
 
-  res.fold(ifLeft: (f){
-emit(SignUpFailure(f));
-  }, ifRight: (ifRight){
-    emit(SignUpSuccess(ifRight));
-  });
+    res.fold(
+      ifLeft: (f) {
+        emit(SignUpFailure(f));
+      },
+      ifRight: (ifRight) {
+        emit(SignUpSuccess(ifRight));
+      },
+    );
   }
-
 }
