@@ -11,6 +11,11 @@ class ProfileBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProfileCubit, ProfileState>(
+      buildWhen: (previous, current) {
+        return current is ProfileSuccess ||
+            current is ProfileFailure ||
+            current is ProfileLoading;
+      },
       builder: (context, state) {
         if (state is ProfileLoading) {
           return const ProfileSkeletonizer();

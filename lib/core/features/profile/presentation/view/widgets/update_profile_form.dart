@@ -14,23 +14,7 @@ class UpdateProfileForm extends StatefulWidget {
   State<UpdateProfileForm> createState() => _UpdateProfileFormState();
 }
 
-TextEditingController name = TextEditingController();
-TextEditingController email = TextEditingController();
-TextEditingController phone = TextEditingController();
-
 class _UpdateProfileFormState extends State<UpdateProfileForm> {
-  final TextEditingController name = TextEditingController();
-  final TextEditingController email = TextEditingController();
-  final TextEditingController phone = TextEditingController();
-
-  @override
-  void dispose() {
-    name.dispose();
-    email.dispose();
-    phone.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -39,9 +23,18 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CustomTextFormFiled(controller: name),
-          CustomTextFormFiled(controller: email),
-          CustomTextFormFiled(controller: phone),
+          CustomTextFormFiled(
+            controller: BlocProvider.of<ProfileCubit>(context).name,
+            hintText: BlocProvider.of<ProfileCubit>(context).name.text,
+          ),
+          CustomTextFormFiled(
+            controller: BlocProvider.of<ProfileCubit>(context).email,
+            hintText: BlocProvider.of<ProfileCubit>(context).email.text,
+          ),
+          CustomTextFormFiled(
+            controller: BlocProvider.of<ProfileCubit>(context).phone,
+            hintText: BlocProvider.of<ProfileCubit>(context).phone.text,
+          ),
 
           SizedBox(height: 20),
           BlocConsumer<ProfileCubit, ProfileState>(
@@ -58,9 +51,9 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
                 onPressed: () {
                   final cubit = BlocProvider.of<ProfileCubit>(context);
                   final request = UpdateProfileRequest(
-                    email: email.text.trim(),
-                    name: name.text.trim(),
-                    phone: phone.text.trim(),
+                    email: cubit.email.text.trim(),
+                    name: cubit.name.text.trim(),
+                    phone: cubit.phone.text.trim(),
                     gender: "0",
                   );
                   cubit.updateProfile(request);

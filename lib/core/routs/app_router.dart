@@ -73,8 +73,8 @@ class AppRouter {
       case Routes.editProfileScreen:
         return MaterialPageRoute(
           builder: (_) {
-            return BlocProvider(
-              create: (context) => getIt<ProfileCubit>(),
+            return BlocProvider.value(
+              value: getIt<ProfileCubit>(),
               child: const UpdateProfileScreen(),
             );
           },
