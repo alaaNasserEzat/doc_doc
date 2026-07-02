@@ -12,6 +12,9 @@ import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_
 import 'package:doc_doc/core/features/profile/data/data_source/profile_remote_data_source.dart';
 import 'package:doc_doc/core/features/profile/data/repo/profile_repo.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/core/features/search/data/data_source/search_data_source.dart';
+import 'package:doc_doc/core/features/search/data/repo/search_repo.dart';
+import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/networking/api_concumer.dart';
 import 'package:doc_doc/core/networking/dio_concumer.dart';
 import 'package:get_it/get_it.dart';
@@ -50,4 +53,8 @@ void setupGetIt() {
     () => ProfileRepo(profileRemoteDataSource: getIt()),
   );
   getIt.registerFactory(() => ProfileCubit(getIt()));
+  //search
+  getIt.registerLazySingleton(() => SearchDataSource(apiConcumer: getIt()));
+  getIt.registerLazySingleton(() => SearchRepo(searchDataSource: getIt()));
+  getIt.registerFactory(() => SearchCubit(getIt()));
 }

@@ -9,15 +9,18 @@ class CustomTextFormFiled extends StatelessWidget {
     this.validator,
     this.suffixIcon,
     this.obscureText,
+    this.onChange,
   });
   final String? hintText;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
   final bool? obscureText;
+  final Function(String s)? onChange;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChange,
       obscureText: obscureText ?? false,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: validator,

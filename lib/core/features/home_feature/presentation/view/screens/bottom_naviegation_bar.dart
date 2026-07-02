@@ -4,6 +4,8 @@ import 'package:doc_doc/core/features/home_feature/presentation/view/screens/hom
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/features/profile/presentation/view/screens/profile_screen.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/core/features/search/presentation/view/screens/search_screen.dart';
+import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/helper/di.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +21,22 @@ class BottomNavBarView extends StatefulWidget {
 class _BottomNavBarViewState extends State<BottomNavBarView> {
   final List<IconData> icons = [
     Icons.home,
+    Icons.search,
     Icons.date_range_outlined,
     Icons.person_outlined,
   ];
 
-  final List<String> lables = ['home', 'appointments', 'profile'];
+  final List<String> lables = ['home', "search", 'appointments', 'profile'];
 
   final List<Widget> views = [
     BlocProvider(
       create: (context) => getIt<HomeCubit>()..getSpecializations(),
       child: const HomeScreen(),
     ),
-
+    BlocProvider(
+      create: (context) => getIt<SearchCubit>(),
+      child: const SearchScreen(),
+    ),
     BlocProvider(
       create: (context) => getIt<AppointmentCubit>()..getAllAppointment(),
       child: const AllAppointmentScreen(),

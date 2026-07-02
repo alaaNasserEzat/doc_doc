@@ -15,6 +15,8 @@ import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_
 import 'package:doc_doc/core/features/profile/presentation/view/screens/profile_screen.dart';
 import 'package:doc_doc/core/features/profile/presentation/view/screens/update_profile_screen.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/core/features/search/presentation/view/screens/search_screen.dart';
+import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/helper/di.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +69,15 @@ class AppRouter {
             return BlocProvider(
               create: (context) => getIt<ProfileCubit>()..getProfile(),
               child: const ProfileScreen(),
+            );
+          },
+        );
+      case Routes.searchScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt<SearchCubit>(),
+              child: const SearchScreen(),
             );
           },
         );
