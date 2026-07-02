@@ -19,7 +19,11 @@ class ProfileSkeletonizer extends StatelessWidget {
       enabled: true,
       child: Padding(
         padding: const EdgeInsets.all(16),
-        child: ProfileInfoSection(name: fackUser.name, email: fackUser.email),
+        child: ProfileInfoSection(
+          name: fackUser.name,
+          email: fackUser.email,
+          gender: "male",
+        ),
       ),
     );
   }

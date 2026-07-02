@@ -11,6 +11,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   final TextEditingController name = TextEditingController();
   final TextEditingController email = TextEditingController();
   final TextEditingController phone = TextEditingController();
+  int selectedGender = 0;
   Future<void> getProfile() async {
     emit(ProfileLoading());
 
@@ -24,7 +25,7 @@ class ProfileCubit extends Cubit<ProfileState> {
         name.text = res.data[0].name;
         email.text = res.data[0].email;
         phone.text = res.data[0].phone;
-
+        selectedGender = res.data.first.gender == "male" ? 0 : 1;
         emit(ProfileSuccess(res));
       },
     );
@@ -41,6 +42,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       },
       ifRight: (res) {
         emit(UpdateProfileSuccess(res));
+        getProfile();
       },
     );
   }

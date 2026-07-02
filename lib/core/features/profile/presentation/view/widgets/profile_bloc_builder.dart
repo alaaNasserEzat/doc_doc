@@ -30,7 +30,11 @@ class ProfileBlocBuilder extends StatelessWidget {
 
           return Padding(
             padding: const EdgeInsets.all(16),
-            child: ProfileInfoSection(name: user.name, email: user.email),
+            child: ProfileInfoSection(
+              name: user.name,
+              email: user.email,
+              gender: user.gender,
+            ),
           );
         }
 

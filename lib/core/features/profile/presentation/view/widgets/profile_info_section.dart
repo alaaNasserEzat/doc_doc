@@ -7,9 +7,11 @@ class ProfileInfoSection extends StatelessWidget {
     super.key,
     required this.name,
     required this.email,
+    required this.gender,
   });
   final String name;
   final String email;
+  final String gender;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,7 +21,11 @@ class ProfileInfoSection extends StatelessWidget {
         CircleAvatar(
           backgroundColor: AppColor.lightGrey,
           radius: 40,
-          child: Icon(Icons.person, size: 30, color: AppColor.primaryColor),
+          child: Icon(
+            gender == "male" ? Icons.face : Icons.face_3_rounded,
+            size: 30,
+            color: AppColor.primaryColor,
+          ),
         ),
 
         Text(name, style: AppTextStyles.interBold18Black),

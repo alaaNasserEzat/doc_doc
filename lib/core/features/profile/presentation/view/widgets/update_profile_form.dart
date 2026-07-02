@@ -1,6 +1,7 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/custom_widgets/custom_dailog.dart';
 import 'package:doc_doc/core/custom_widgets/custom_text_form_filed.dart';
+import 'package:doc_doc/core/features/auth_feature/presentation/widgets/gender_selection_widgets.dart';
 import 'package:doc_doc/core/features/profile/data/models/update_profile_request.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_state.dart';
@@ -35,7 +36,16 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
             controller: BlocProvider.of<ProfileCubit>(context).phone,
             hintText: BlocProvider.of<ProfileCubit>(context).phone.text,
           ),
-
+          GenderSelectionWidget(
+            selectedGender: BlocProvider.of<ProfileCubit>(
+              context,
+            ).selectedGender,
+            onChanged: (v) {
+              setState(() {
+                BlocProvider.of<ProfileCubit>(context).selectedGender = v;
+              });
+            },
+          ),
           SizedBox(height: 20),
           BlocConsumer<ProfileCubit, ProfileState>(
             listener: (context, state) {
