@@ -1,4 +1,5 @@
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/all_appointment_list.dart';
+import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/appointment_skeletonizer_list.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appointment_state.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
@@ -13,7 +14,7 @@ class GetAllAppointmentBlocBuilder extends StatelessWidget {
     return BlocBuilder<AppointmentCubit, AppointmentState>(
       builder: (context, state) {
         return state is GetAppointmentLoading
-            ? Center(child: CircularProgressIndicator())
+            ? AppointmentSkeletonizerList()
             : state is GetAllAppointmentSuccess
             ? state.response.data.isEmpty
                   ? Center(

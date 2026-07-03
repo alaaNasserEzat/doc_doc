@@ -15,7 +15,10 @@ class DoctorWidget extends StatelessWidget {
         onTap: onTap,
         child: Row(
           children: [
-            Image.asset("assets/images/Image (1).png"),
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(16),
+              child: Image.asset("assets/images/Image (1).png"),
+            ),
             Spacer(),
             Column(
               spacing: 5,

@@ -12,6 +12,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     color: AppColor.black,
   );
+  static const interBold14Black = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+    color: AppColor.black,
+  );
   static const interSemiBold18Black = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,

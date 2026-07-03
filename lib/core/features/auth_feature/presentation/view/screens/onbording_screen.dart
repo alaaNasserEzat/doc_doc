@@ -1,7 +1,10 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/helper/extention.dart';
+import 'package:doc_doc/core/helper/share_pref_halper.dart';
+import 'package:doc_doc/core/helper/shared_pref_keys.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
+import 'package:doc_doc/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -22,15 +25,21 @@ class OnbordingScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset('assets/images/Group.svg', width: 38, height: 38),
-                  const Text(" Docdoc", style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold)),
+                  SvgPicture.asset(
+                    'assets/images/Group.svg',
+                    width: 38,
+                    height: 38,
+                  ),
+                  const Text(
+                    " Docdoc",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
                 ],
               ),
               Stack(
                 children: [
-          SvgPicture.asset("assets/images/docdoc_logo_low_opacity.svg"),
+                  SvgPicture.asset("assets/images/docdoc_logo_low_opacity.svg"),
                   Container(
-      
                     foregroundDecoration: BoxDecoration(
                       gradient: LinearGradient(
                         stops: const [0.14, 0.4],
@@ -42,10 +51,12 @@ class OnbordingScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    child:                       Image.asset('assets/images/doctor_onbording2.png',height: 450,),
-                     
+                    child: Image.asset(
+                      'assets/images/doctor_onbording2.png',
+                      height: 450,
+                    ),
                   ),
- 
+
                   Positioned(
                     bottom: 0,
                     left: 50,
@@ -54,11 +65,11 @@ class OnbordingScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Best  Doctor",
-                          style: AppTextStyles.interBold32Blue
+                          style: AppTextStyles.interBold32Blue,
                         ),
                         Text(
                           "Appointment App",
-                         style: AppTextStyles.interBold32Blue,
+                          style: AppTextStyles.interBold32Blue,
                         ),
                       ],
                     ),
@@ -70,9 +81,17 @@ class OnbordingScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: AppTextStyles.interRegular12gray,
               ),
-              CustomBtn(onPressed: () {
-           context.pushNamed(Routes.loginScreen);
-              },text: "Get Started",),
+              CustomBtn(
+                onPressed: () async {
+                  context.pushNamed(Routes.loginScreen);
+                  isVisited = true;
+                  await SharedPrefHelper.setData(
+                    SharedPrefKeys.isVisited,
+                    true,
+                  );
+                },
+                text: "Get Started",
+              ),
             ],
           ),
         ),

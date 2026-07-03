@@ -1,5 +1,3 @@
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/all_appointment_list.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/appointemt_item.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/get_all_appointment_bloc_builder.dart';
 import 'package:flutter/material.dart';
 

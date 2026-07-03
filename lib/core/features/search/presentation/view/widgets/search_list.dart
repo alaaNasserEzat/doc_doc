@@ -1,4 +1,5 @@
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/skeletonizer_doctor_list.dart';
 import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/features/search/presentation/view_model/search_state.dart';
 import 'package:doc_doc/core/helper/extention.dart';
@@ -14,7 +15,7 @@ class SearchList extends StatelessWidget {
     return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
         if (state is SearchLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const SkeletonizerDoctorList();
         }
 
         if (state is SearchFailure) {

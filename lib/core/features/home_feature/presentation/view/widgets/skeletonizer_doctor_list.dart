@@ -19,9 +19,9 @@ class SkeletonizerDoctorList extends StatelessWidget {
         appointPrice: 100,
         specialization: Specialization(id: 1, name: "ahamed"),
         id: 1,
-        name: "ahamd",
-        email: "a@g.com",
-        address: "agggggggg",
+        name: "ahamd................",
+        email: "a@g.com.........",
+        address: "agggggggg.......",
         city: City(
           id: 1,
           name: "city",
