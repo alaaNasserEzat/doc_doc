@@ -4,7 +4,7 @@ import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 showAppBar({required BuildContext context, required String title}) {
-  AppBar(
+  return AppBar(
     centerTitle: true,
     title: Text(title, style: AppTextStyles.interMedium18White),
     backgroundColor: AppColor.primaryColor,

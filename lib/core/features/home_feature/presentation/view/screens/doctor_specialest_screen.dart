@@ -6,7 +6,6 @@ import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
-import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
