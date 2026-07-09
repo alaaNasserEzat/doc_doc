@@ -22,7 +22,10 @@ class Item extends StatelessWidget {
           spacing: 15,
           children: [
             Icon(icon, size: 24, color: AppColor.primaryColor),
-            Text(text, style: AppTextStyles.interMedium12Gray75),
+            Text(
+              text,
+              style: AppTextStyles.interMedium12Gray75.copyWith(fontSize: 18),
+            ),
             Spacer(),
             Icon(
               Icons.arrow_forward_ios,

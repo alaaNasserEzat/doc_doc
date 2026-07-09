@@ -1,9 +1,12 @@
+import 'package:doc_doc/core/custom_widgets/custom_app_bar.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_widget.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
 import 'package:doc_doc/core/routs/routes.dart';
+import 'package:doc_doc/core/utils/app_color.dart';
+import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,6 +22,8 @@ class _DoctorSpecialestScreenState extends State<DoctorSpecialestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: showAppBar(context: context, title: "Doctor Speciality"),
+      backgroundColor: AppColor.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: BlocBuilder<HomeCubit, HomeState>(
@@ -29,27 +34,30 @@ class _DoctorSpecialestScreenState extends State<DoctorSpecialestScreen> {
             return state is HomeLoading
                 ? Center(child: CircularProgressIndicator())
                 : state is HomeSuccess
-                ? Wrap(
-                    spacing: 15,
-                    children: List.generate(state.response.data!.length, (
-                      index,
-                    ) {
-                      final data = state.response.data;
-                      return DoctorSpecialestWidget(
-                        text: data![index].name ?? "",
-                        image: specialityImages[index],
-                        onTap: () {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                          context.pushNamed(
-                            Routes.doctorsScreen,
-                            arguments: data[index].doctors,
-                          );
-                        },
-                        isSelected: index == selectedIndex,
-                      );
-                    }),
+                ? Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Wrap(
+                      spacing: 15,
+                      children: List.generate(state.response.data!.length, (
+                        index,
+                      ) {
+                        final data = state.response.data;
+                        return DoctorSpecialestWidget(
+                          text: data![index].name ?? "",
+                          image: specialityImages[index],
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = index;
+                            });
+                            context.pushNamed(
+                              Routes.doctorsScreen,
+                              arguments: data[index].doctors,
+                            );
+                          },
+                          isSelected: index == selectedIndex,
+                        );
+                      }),
+                    ),
                   )
                 : Text("error");
           },

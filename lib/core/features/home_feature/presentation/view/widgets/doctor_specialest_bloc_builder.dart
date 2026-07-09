@@ -19,7 +19,9 @@ class DoctorSpecialestBlocBuilder extends StatelessWidget {
             ? SkeletonizerSpecialestList()
             : state is HomeSuccess
             ? DoctorSpecialestList(specializatinDataList: state.response.data!)
-            : Text("error");
+            : state is HomeError
+            ? Text(state.errorModel.getAllErrorMessage())
+            : Text("something wrong!");
       },
     );
   }

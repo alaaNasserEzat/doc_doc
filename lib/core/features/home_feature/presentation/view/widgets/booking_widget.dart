@@ -33,7 +33,7 @@ class BookingWidget extends StatelessWidget {
               ),
               CustomBtn(
                 width: 109,
-                height: 38,
+                height: 50,
 
                 shap: RoundedRectangleBorder(
                   borderRadius: BorderRadiusGeometry.circular(32),
@@ -49,7 +49,7 @@ class BookingWidget extends StatelessWidget {
         Positioned(
           top: -20,
           right: 16,
-          bottom: 0,
+          bottom: 8,
 
           child: Image.asset(AppAssets.doctor),
         ),

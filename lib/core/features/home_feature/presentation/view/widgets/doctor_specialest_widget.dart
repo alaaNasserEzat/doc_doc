@@ -26,12 +26,12 @@ class DoctorSpecialestWidget extends StatelessWidget {
             onTap: onTap,
             child: Skeleton.leaf(
               child: CircleAvatar(
-                radius: 30,
+                radius: 32,
                 backgroundColor: isSelected
                     ? AppColor.primaryColor
                     : AppColor.whiteff,
                 child: CircleAvatar(
-                  radius: 28,
+                  radius: 30,
                   backgroundColor: AppColor.whiteff,
                   child: Image.asset(image, width: 30, height: 30),
                 ),

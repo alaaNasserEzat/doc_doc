@@ -51,6 +51,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.white,
       body: views[currentIndx],
       extendBody: true,
       bottomNavigationBar: Padding(

@@ -9,45 +9,43 @@ class DoctorWidget extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: GestureDetector(
-        onTap: onTap,
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 16.0),
         child: Row(
+          spacing: 10,
           children: [
             ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(16),
               child: Image.asset("assets/images/Image (1).png"),
             ),
-            Spacer(),
-            Column(
-              spacing: 5,
-              children: [
-                Text(doctor.name ?? "", style: AppTextStyles.interBold18Black),
-                Row(
-                  spacing: 15,
-                  children: [
-                    Text(
-                      "${doctor.specialization?.name ?? ""}",
-                      style: AppTextStyles.interMedium12Gray75,
-                    ),
-                    Container(color: AppColor.grey, width: 2, height: 30),
-                    Text(
-                      "${doctor.address}",
-                      style: AppTextStyles.interMedium12Gray75,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "${doctor.appointPrice}",
-                      style: AppTextStyles.interMedium12Gray75,
-                    ),
-                    Text(" \$", style: TextStyle(color: AppColor.amber)),
-                  ],
-                ),
-              ],
+            // Spacer(),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 5,
+                children: [
+                  Text(
+                    doctor.name ?? "",
+                    style: AppTextStyles.interBold18Black,
+                  ),
+                  Text(
+                    "${doctor.address}",
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.interMedium12Gray75,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "${doctor.appointPrice}",
+                        style: AppTextStyles.interMedium12Gray75,
+                      ),
+                      Text("  \$", style: TextStyle(color: AppColor.amber)),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

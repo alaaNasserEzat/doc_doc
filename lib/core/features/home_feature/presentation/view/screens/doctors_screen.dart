@@ -1,9 +1,6 @@
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DoctorsScreen extends StatelessWidget {
   const DoctorsScreen({super.key, required this.doctors});
@@ -11,11 +8,14 @@ class DoctorsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: doctors.length,
-        itemBuilder: (context, index) {
-          return DoctorWidget(doctor: doctors[index]);
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+          itemCount: doctors.length,
+          itemBuilder: (context, index) {
+            return DoctorWidget(doctor: doctors[index]);
+          },
+        ),
       ),
     );
   }

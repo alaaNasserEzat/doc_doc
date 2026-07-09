@@ -11,6 +11,7 @@ class ProfileItemsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: 10,
       children: [
         Item(
           text: "updat Profile",

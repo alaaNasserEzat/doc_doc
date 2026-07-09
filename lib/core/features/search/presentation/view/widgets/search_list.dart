@@ -1,5 +1,6 @@
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/skeletonizer_doctor_list.dart';
+import 'package:doc_doc/core/features/search/presentation/view/widgets/initial_search_widgets.dart';
 import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/features/search/presentation/view_model/search_state.dart';
 import 'package:doc_doc/core/helper/extention.dart';
@@ -47,7 +48,8 @@ class SearchList extends StatelessWidget {
           );
         }
 
-        return const Center(child: Text("Search for doctors"));
+        return InitialSearchWidgets();
+        //const Center(child: Text("Search for doctors"));
       },
     );
   }

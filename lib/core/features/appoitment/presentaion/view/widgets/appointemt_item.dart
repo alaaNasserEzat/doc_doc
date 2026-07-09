@@ -1,6 +1,5 @@
 import 'package:doc_doc/core/features/appoitment/data/models/appointment_data.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/white_shadwo_container.dart';
-import 'package:doc_doc/core/images/app_assets.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,15 @@ class AppointemtItem extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(child: Image.asset(AppAssets.doctor, height: 107)),
+                CircleAvatar(
+                  backgroundColor: AppColor.whiteff,
+                  child: Icon(
+                    appointmentData.doctor.gender == "male"
+                        ? Icons.person
+                        : Icons.face_3,
+                    color: AppColor.primaryColor,
+                  ),
+                ),
                 SizedBox(width: 30),
                 Column(
                   children: [

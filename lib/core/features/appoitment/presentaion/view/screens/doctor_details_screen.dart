@@ -4,6 +4,7 @@ import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/choose
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_information.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/doctor_top_bar.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/select_date_section.dart';
+import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
@@ -13,9 +14,10 @@ class DoctorDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColor.white,
+        body: Column(
           spacing: 15,
           crossAxisAlignment: CrossAxisAlignment.start,
 

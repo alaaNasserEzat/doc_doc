@@ -1,4 +1,5 @@
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,15 @@ class DoctorInformation extends StatelessWidget {
           Text(
             '${doctor.degree} - ${doctor.specialization?.name!}',
             style: AppTextStyles.interRegular12blue,
+          ),
+          Row(
+            spacing: 5,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.location_on_outlined, color: AppColor.primaryColor),
+              Text(doctor.address!, style: AppTextStyles.interRegular12blue),
+            ],
           ),
           Text('${doctor.phone}', style: AppTextStyles.interRegular12blue),
         ],

@@ -14,7 +14,7 @@ class BookSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8),
+      padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 8),
       child: Row(
         children: [
           Text(
@@ -35,6 +35,8 @@ class BookSection extends StatelessWidget {
               return state is AppointmentLoading
                   ? CircularProgressIndicator()
                   : CustomBtn(
+                      width: 200,
+                      height: 60,
                       onPressed: () {
                         final cubit = BlocProvider.of<AppointmentCubit>(
                           context,
