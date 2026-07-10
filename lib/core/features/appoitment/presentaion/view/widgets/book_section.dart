@@ -25,7 +25,7 @@ class BookSection extends StatelessWidget {
           BlocConsumer<AppointmentCubit, AppointmentState>(
             listener: (context, state) {
               if (state is AppointmentSuccess) {
-                showSuccessSnakBar(context, "appointment successul");
+                showSuccessSnakBar(context, "appointment successful");
               }
               if (state is AppointmentFailure) {
                 showErrorDialog(context, state.error.getAllErrorMessage());
@@ -41,7 +41,8 @@ class BookSection extends StatelessWidget {
                         final cubit = BlocProvider.of<AppointmentCubit>(
                           context,
                         );
-                        if (cubit.selectedTime != null) {
+                        if (cubit.selectedTime != null &&
+                            cubit.dateController.text != null) {
                           final request = AppointmentRequestBody(
                             doctorId: doctor.id!,
                             startTime:

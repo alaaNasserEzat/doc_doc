@@ -3,10 +3,13 @@ import 'package:doc_doc/core/helper/share_pref_halper.dart';
 import 'package:doc_doc/core/helper/shared_pref_keys.dart';
 import 'package:doc_doc/core/routs/app_router.dart';
 import 'package:doc_doc/core/routs/routes.dart';
+import 'package:doc_doc/core/servicies/notification/local_notification_service.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotificationService.init();
   setupGetIt();
   runApp(const MyApp());
 }
