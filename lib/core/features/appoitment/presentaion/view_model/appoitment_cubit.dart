@@ -9,10 +9,10 @@ class AppointmentCubit extends Cubit<AppointmentState> {
   final AppointmentRepo repo;
 
   AppointmentCubit(this.repo) : super(AppointmentInitial());
-  TextEditingController dateController = TextEditingController();
+  TextEditingController? dateController = TextEditingController();
 
   void selectDate(DateTime date) {
-    dateController.text = date.toString().substring(0, 10);
+    dateController!.text = date.toString().substring(0, 10);
     emit(SelectDateState());
   }
 
@@ -35,8 +35,8 @@ class AppointmentCubit extends Cubit<AppointmentState> {
         LocalNotificationService.showSecdualNotification(
           result.data.id,
           "Appointment Reminder",
-          "Your appontiment with Dr. ${result.data.doctor.name} at  ${"${dateController.text} ${selectedTime!}"}",
-          "${dateController.text} ${selectedTime!}",
+          "Your appontiment with Dr. ${result.data.doctor.name} at  ${"${dateController!.text} ${selectedTime!}"}",
+          "${dateController!.text} ${selectedTime!}",
         );
         emit(AppointmentSuccess(result));
       },

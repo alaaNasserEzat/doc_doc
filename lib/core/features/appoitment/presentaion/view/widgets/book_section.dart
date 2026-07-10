@@ -41,15 +41,22 @@ class BookSection extends StatelessWidget {
                         final cubit = BlocProvider.of<AppointmentCubit>(
                           context,
                         );
-                        if (cubit.selectedTime != null &&
-                            cubit.dateController.text != null) {
-                          final request = AppointmentRequestBody(
-                            doctorId: doctor.id!,
-                            startTime:
-                                cubit.dateController.text + cubit.selectedTime!,
-                          );
-                          cubit.makeAppointment(request);
+                        if (cubit.dateController!.text.isEmpty) {
+                          showErrorDialog(context, 'Please select a date');
+                          return;
                         }
+
+                        if (cubit.selectedTime == null) {
+                          showErrorDialog(context, 'Please select a time');
+                          return;
+                        }
+
+                        final request = AppointmentRequestBody(
+                          doctorId: doctor.id!,
+                          startTime:
+                              cubit.dateController!.text + cubit.selectedTime!,
+                        );
+                        cubit.makeAppointment(request);
                       },
                       text: "Book Now",
                     );
