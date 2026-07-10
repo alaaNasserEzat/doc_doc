@@ -1,3 +1,4 @@
+import 'package:doc_doc/core/custom_widgets/custom_circle_avater.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -13,15 +14,8 @@ class InitialSearchWidgets extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CircleAvatar(
-            radius: 100,
-            backgroundColor: AppColor.whiteff,
-            child: Icon(
-              Icons.search_off_rounded,
-              color: AppColor.primaryColor,
-              size: 100,
-            ),
-          ),
+          SizedBox(height: 50),
+          CustomCircleAvater(icon: Icons.search_off_rounded),
           Text(
             textAlign: TextAlign.center,
             "Find trusted doctors and schedule your appointment in just a few taps.",

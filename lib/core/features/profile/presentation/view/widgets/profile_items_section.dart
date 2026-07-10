@@ -2,6 +2,8 @@ import 'package:doc_doc/core/features/profile/presentation/view/screens/update_p
 import 'package:doc_doc/core/features/profile/presentation/view/widgets/item.dart';
 import 'package:doc_doc/core/features/profile/presentation/view/widgets/logout_dailog.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/core/helper/extention.dart';
+import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +34,9 @@ class ProfileItemsSection extends StatelessWidget {
         Item(
           text: "notifications",
           icon: Icons.notifications_on_outlined,
-          onTap: () {},
+          onTap: () {
+            context.pushNamed(Routes.notificationScreen);
+          },
         ),
 
         Item(text: "settings", icon: Icons.settings, onTap: () {}),

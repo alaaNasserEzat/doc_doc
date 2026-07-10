@@ -5,13 +5,13 @@ import 'package:doc_doc/core/features/auth_feature/presentation/view/screens/sig
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_cubit.dart';
 import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
 import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/screens/doctor_details_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/bottom_naviegation_bar.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctor_specialest_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/doctors_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/screens/home_screen.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
+import 'package:doc_doc/core/features/profile/presentation/view/screens/notification_screen.dart';
 import 'package:doc_doc/core/features/profile/presentation/view/screens/profile_screen.dart';
 import 'package:doc_doc/core/features/profile/presentation/view/screens/update_profile_screen.dart';
 import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
@@ -88,6 +88,12 @@ class AppRouter {
               value: getIt<ProfileCubit>(),
               child: const UpdateProfileScreen(),
             );
+          },
+        );
+      case Routes.notificationScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const NotificationScreen();
           },
         );
       case Routes.doctorDetailsScreen:
