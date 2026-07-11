@@ -35,7 +35,7 @@ class ProfileItemsSection extends StatelessWidget {
           text: "notifications",
           icon: Icons.notifications_on_outlined,
           onTap: () {
-            context.pushNamed(Routes.notificationScreen);
+            context.pushNamed(Routes.notificationScreen, arguments: null);
           },
         ),
 

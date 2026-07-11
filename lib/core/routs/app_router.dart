@@ -91,9 +91,10 @@ class AppRouter {
           },
         );
       case Routes.notificationScreen:
+        final String? text = settings.arguments as String?;
         return MaterialPageRoute(
           builder: (_) {
-            return const NotificationScreen();
+            return NotificationScreen(text: text);
           },
         );
       case Routes.doctorDetailsScreen:

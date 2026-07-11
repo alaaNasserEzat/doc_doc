@@ -7,6 +7,7 @@ import 'package:doc_doc/core/servicies/notification/local_notification_service.d
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalNotificationService.init();
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       color: AppColor.white,
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.onBoardingScreen,

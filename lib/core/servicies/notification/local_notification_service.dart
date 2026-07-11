@@ -1,3 +1,5 @@
+import 'package:doc_doc/core/routs/routes.dart';
+import 'package:doc_doc/main.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
@@ -12,6 +14,15 @@ class LocalNotificationService {
       DarwinInitializationSettings();
   static Future init() async {
     flutterLocalNotificationsPlugin.initialize(
+      onDidReceiveNotificationResponse: (details) {
+        final String? payload = details.payload;
+        if (payload != null) {
+          navigatorKey.currentState?.pushNamed(
+            Routes.notificationScreen,
+            arguments: payload,
+          );
+        }
+      },
       settings: InitializationSettings(
         android: androidInitializationSettings,
         iOS: darwinInitializationSettings,
@@ -55,6 +66,7 @@ class LocalNotificationService {
       scheduledDate: scheduleDate,
       notificationDetails: notificationDetails,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      payload: body,
     );
   }
 }
