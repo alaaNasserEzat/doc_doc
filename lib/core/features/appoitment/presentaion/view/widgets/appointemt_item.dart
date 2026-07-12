@@ -51,7 +51,7 @@ class AppointemtItem extends StatelessWidget {
               children: [
                 Icon(Icons.calendar_month, color: AppColor.grey, size: 15),
                 Text(
-                  "   ${appointmentData.appointmentEndTime.substring(0, appointmentData.appointmentTime.length - 7)}",
+                  "${appointmentData.appointmentEndTime.substring(0, appointmentData.appointmentTime.length - 7)}",
                   style: AppTextStyles.interMedium12Gray75,
                 ),
               ],

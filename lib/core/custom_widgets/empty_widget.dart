@@ -19,7 +19,10 @@ class EmptyWidget extends StatelessWidget {
           Text(
             textAlign: TextAlign.center,
             text,
-            style: AppTextStyles.interRegular12gray61.copyWith(fontSize: 16),
+            style: AppTextStyles.interRegular12gray61.copyWith(
+              fontSize: 16,
+              height: 2,
+            ),
           ),
         ],
       ),

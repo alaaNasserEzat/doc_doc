@@ -19,7 +19,8 @@ class GetAllAppointmentBlocBuilder extends StatelessWidget {
             ? state.response.data.isEmpty
                   ? EmptyWidget(
                       icon: Icons.date_range_outlined,
-                      text: "there no appointment yet",
+                      text:
+                          "No appointments yet Book an appointment with a doctor to see it here.",
                     )
                   : AllAppointmentList(list: state.response.data)
             : state is GetAllAppointmentFailure

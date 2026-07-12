@@ -17,10 +17,15 @@ class NotificationScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: text != null
               ? NotificationItem(text: text!)
-              : EmptyWidget(
-                  icon: Icons.notifications_off_outlined,
-                  text:
-                      "No notifications yet. New notifications will appear here when available.",
+              : Column(
+                  children: [
+                    SizedBox(height: 100),
+                    EmptyWidget(
+                      icon: Icons.notifications_off_outlined,
+                      text:
+                          "No notifications yet. New notifications will appear here when available.",
+                    ),
+                  ],
                 ),
         ),
       ),

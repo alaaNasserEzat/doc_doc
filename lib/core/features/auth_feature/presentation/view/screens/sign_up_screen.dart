@@ -27,6 +27,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(height: 20),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(

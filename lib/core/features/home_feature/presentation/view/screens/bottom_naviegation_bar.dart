@@ -50,64 +50,60 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
   int currentIndx = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.white,
-      body: views[currentIndx],
-      extendBody: true,
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          height: 60,
-          decoration: BoxDecoration(
-            color: AppColor.white,
-            borderRadius: BorderRadius.circular(24),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.15),
-                blurRadius: 20,
-                offset: Offset(0, 8), // ظل لتحت
-              ),
-            ],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(icons.length, (index) {
-              return GestureDetector(
-                onTap: () {
-                  changeCurrentIndx(index);
-                },
-                child: currentIndx == index
-                    ? Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Column(
-                          children: [
-                            Icon(
-                              icons[index],
-                              size: 20,
-                              color: AppColor.primaryColor,
-                            ),
+    return SafeArea(
+      maintainBottomViewPadding: true,
+      child: Scaffold(
+        backgroundColor: AppColor.white,
+        body: views[currentIndx],
 
-                            Text(
-                              lables[index],
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          ],
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Container(
+            height: 60,
+            decoration: BoxDecoration(
+              color: AppColor.white,
+              borderRadius: BorderRadius.circular(24),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.15),
+                  blurRadius: 20,
+                  offset: Offset(0, 8), // ظل لتحت
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(icons.length, (index) {
+                return GestureDetector(
+                  onTap: () {
+                    changeCurrentIndx(index);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      children: [
+                        Icon(
+                          icons[index],
+                          size: 20,
+                          color: currentIndx == index
+                              ? AppColor.primaryColor
+                              : AppColor.grey,
                         ),
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
-                        child: Column(
-                          children: [
-                            Icon(icons[index], size: 20, color: AppColor.grey),
-                            Text(
-                              lables[index],
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                          ],
+
+                        Text(
+                          lables[index],
+                          style: TextStyle(
+                            color: currentIndx == index
+                                ? AppColor.primaryColor
+                                : AppColor.grey,
+                          ),
                         ),
-                      ),
-              );
-            }),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+            ),
           ),
         ),
       ),
