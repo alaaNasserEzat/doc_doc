@@ -17,24 +17,33 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColor.white,
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              spacing: 15,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                WelcomWidget(),
-                BookingWidget(),
-                SeeAllRow(
+          padding: const EdgeInsets.all(16),
+          child: CustomScrollView(
+            slivers: [
+              const SliverToBoxAdapter(child: WelcomWidget()),
+
+              const SliverToBoxAdapter(child: SizedBox(height: 15)),
+
+              const SliverToBoxAdapter(child: BookingWidget()),
+
+              const SliverToBoxAdapter(child: SizedBox(height: 15)),
+
+              SliverToBoxAdapter(
+                child: SeeAllRow(
                   text: "Doctor Speciality",
                   onTap: () {
                     context.pushNamed(Routes.doctorSpecialestScreen);
                   },
                 ),
-                DoctorSpecialestBlocBuilder(),
-                DoctorBlocBuilder(),
-              ],
-            ),
+              ),
+
+              const SliverToBoxAdapter(child: SizedBox(height: 15)),
+
+              const DoctorSpecialestBlocBuilder(),
+              const SliverToBoxAdapter(child: SizedBox(height: 15)),
+
+              const DoctorBlocBuilder(),
+            ],
           ),
         ),
       ),

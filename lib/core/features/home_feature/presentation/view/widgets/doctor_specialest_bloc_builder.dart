@@ -16,12 +16,20 @@ class DoctorSpecialestBlocBuilder extends StatelessWidget {
       },
       builder: (context, state) {
         return state is HomeLoading
-            ? SkeletonizerSpecialestList()
+            ? SliverToBoxAdapter(child: SkeletonizerSpecialestList())
             : state is HomeSuccess
-            ? DoctorSpecialestList(specializatinDataList: state.response.data!)
+            ? SliverToBoxAdapter(
+                child: DoctorSpecialestList(
+                  specializatinDataList: state.response.data!,
+                ),
+              )
             : state is HomeError
-            ? Text(state.errorModel.getAllErrorMessage())
-            : Text("something wrong!");
+            ? SliverToBoxAdapter(
+                child: Center(
+                  child: Text(state.errorModel.getAllErrorMessage()),
+                ),
+              )
+            : SliverToBoxAdapter(child: Text("something wrong!"));
       },
     );
   }

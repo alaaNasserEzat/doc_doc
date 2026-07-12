@@ -1,8 +1,8 @@
+import 'package:doc_doc/core/custom_widgets/empty_widget.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/all_appointment_list.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/appointment_skeletonizer_list.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appointment_state.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
-import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,16 +17,14 @@ class GetAllAppointmentBlocBuilder extends StatelessWidget {
             ? AppointmentSkeletonizerList()
             : state is GetAllAppointmentSuccess
             ? state.response.data.isEmpty
-                  ? Center(
-                      child: Text(
-                        "there no appointment yet",
-                        style: AppTextStyles.interBold18Black,
-                      ),
+                  ? EmptyWidget(
+                      icon: Icons.date_range_outlined,
+                      text: "there no appointment yet",
                     )
                   : AllAppointmentList(list: state.response.data)
             : state is GetAllAppointmentFailure
-            ? Text(state.error.getAllErrorMessage())
-            : Text("oops!, sommting wrong");
+            ? Center(child: Text(state.error.getAllErrorMessage()))
+            : Center(child: Text("oops!, sommting wrong"));
       },
     );
   }

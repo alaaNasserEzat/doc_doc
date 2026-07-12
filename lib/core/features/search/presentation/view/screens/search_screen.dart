@@ -15,26 +15,30 @@ class SearchScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColor.white,
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-
-            spacing: 20,
-            children: [
-              Text(
-                "let's Find your doctor",
-                style: AppTextStyles.interBold18Black,
+          padding: const EdgeInsets.all(8),
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Text(
+                  "let's Find your doctor",
+                  style: AppTextStyles.interBold18Black,
+                ),
               ),
 
-              CustomTextFormFiled(
-                suffixIcon: Icon(Icons.search),
-                onChange: (s) {
-                  context.read<SearchCubit>().searchDoctors(s);
-                },
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
+
+              SliverToBoxAdapter(
+                child: CustomTextFormFiled(
+                  suffixIcon: const Icon(Icons.search),
+                  onChange: (s) {
+                    context.read<SearchCubit>().searchDoctors(s);
+                  },
+                ),
               ),
 
-              SearchList(),
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
+
+              const SearchList(),
             ],
           ),
         ),

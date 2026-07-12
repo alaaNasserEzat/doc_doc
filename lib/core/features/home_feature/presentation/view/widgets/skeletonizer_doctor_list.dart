@@ -29,6 +29,9 @@ class SkeletonizerDoctorList extends StatelessWidget {
         ),
       ),
     );
-    return Skeletonizer(enabled: true, child: DoctorList(doctors: fakeDoctors));
+    return SliverSkeletonizer(
+      enabled: true,
+      child: DoctorList(doctors: fakeDoctors),
+    );
   }
 }

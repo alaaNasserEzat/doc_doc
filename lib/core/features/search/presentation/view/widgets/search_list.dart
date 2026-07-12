@@ -1,6 +1,7 @@
+import 'package:doc_doc/core/custom_widgets/empty_widget.dart';
+import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_list.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
 import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/skeletonizer_doctor_list.dart';
-import 'package:doc_doc/core/features/search/presentation/view/widgets/initial_search_widgets.dart';
 import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/features/search/presentation/view_model/search_state.dart';
 import 'package:doc_doc/core/helper/extention.dart';
@@ -20,35 +21,45 @@ class SearchList extends StatelessWidget {
         }
 
         if (state is SearchFailure) {
-          return Center(child: Text(state.errMessage));
+          return SliverToBoxAdapter(
+            child: Center(child: Text(state.errMessage)),
+          );
         }
 
         if (state is SearchSuccess) {
           final doctors = state.searchResponse.data ?? [];
 
           if (doctors.isEmpty) {
-            return const Center(child: Text("No doctors found"));
+            return SliverToBoxAdapter(
+              child: const Center(child: Text("No doctors found")),
+            );
           }
-
-          return Expanded(
-            child: ListView.builder(
-              itemCount: doctors.length,
-              itemBuilder: (context, index) {
-                return DoctorWidget(
-                  doctor: doctors[index],
-                  onTap: () {
-                    context.pushNamed(
-                      Routes.doctorDetailsScreen,
-                      arguments: doctors[index],
-                    );
-                  },
-                );
-              },
-            ),
-          );
+          return DoctorList(doctors: doctors);
+          // return Expanded(
+          //   child: ListView.builder(
+          //     itemCount: doctors.length,
+          //     itemBuilder: (context, index) {
+          //       return DoctorWidget(
+          //         doctor: doctors[index],
+          //         onTap: () {
+          //           context.pushNamed(
+          //             Routes.doctorDetailsScreen,
+          //             arguments: doctors[index],
+          //           );
+          //         },
+          //       );
+          //     },
+          //   ),
+          // );
         }
 
-        return InitialSearchWidgets();
+        return SliverToBoxAdapter(
+          child: EmptyWidget(
+            icon: Icons.search_off_rounded,
+            text:
+                "Find trusted doctors and schedule your appointment in just a few taps.",
+          ),
+        );
         //const Center(child: Text("Search for doctors"));
       },
     );

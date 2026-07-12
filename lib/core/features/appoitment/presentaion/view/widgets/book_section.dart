@@ -1,5 +1,6 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/custom_widgets/custom_dailog.dart';
+import 'package:doc_doc/core/custom_widgets/success_dailog.dart';
 import 'package:doc_doc/core/features/appoitment/data/models/appointment_request_body.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appointment_state.dart';
 import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
@@ -25,7 +26,7 @@ class BookSection extends StatelessWidget {
           BlocConsumer<AppointmentCubit, AppointmentState>(
             listener: (context, state) {
               if (state is AppointmentSuccess) {
-                showSuccessSnakBar(context, "appointment successful");
+                showSuccessDialog(context, "appointment successful");
               }
               if (state is AppointmentFailure) {
                 showErrorDialog(context, state.error.getAllErrorMessage());

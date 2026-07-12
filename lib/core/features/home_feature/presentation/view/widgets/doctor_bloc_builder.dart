@@ -22,8 +22,10 @@ class DoctorBlocBuilder extends StatelessWidget {
             : state is GetDoctorSuccess
             ? DoctorList(doctors: state.doctors)
             : state is HomeError
-            ? Text(state.errorModel.getAllErrorMessage())
-            : SizedBox();
+            ? SliverToBoxAdapter(
+                child: Text(state.errorModel.getAllErrorMessage()),
+              )
+            : SliverToBoxAdapter(child: SizedBox.shrink());
       },
     );
   }
