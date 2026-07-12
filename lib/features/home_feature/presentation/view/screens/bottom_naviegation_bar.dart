@@ -50,14 +50,13 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
   int currentIndx = 0;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      maintainBottomViewPadding: true,
-      child: Scaffold(
-        backgroundColor: AppColor.white,
-        body: views[currentIndx],
-
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(6.0),
+    return Scaffold(
+      backgroundColor: AppColor.white,
+      body: views[currentIndx],
+      extendBody: true,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(6.0),
+        child: SafeArea(
           child: Container(
             height: 60,
             decoration: BoxDecoration(
