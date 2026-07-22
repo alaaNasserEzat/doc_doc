@@ -1,6 +1,7 @@
 default_platform(:android)
 
 platform :android do
+  
   desc "builds the Android app and generates the APK"
   lane :beta do
      gradle(
