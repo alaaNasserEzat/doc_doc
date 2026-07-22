@@ -1,9 +1,9 @@
 import 'package:doc_doc/core/custom_widgets/empty_widget.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_list.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/skeletonizer_doctor_list.dart';
-import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
-import 'package:doc_doc/core/features/search/presentation/view_model/search_state.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_list.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_widget.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/skeletonizer_doctor_list.dart';
+import 'package:doc_doc/features/search/presentation/view_model/search_cubit.dart';
+import 'package:doc_doc/features/search/presentation/view_model/search_state.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';

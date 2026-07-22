@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_data.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_data.dart';
 
 class GetAllAppointmentsResponse {
   final String message;

@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_widget.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_widget.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsScreen extends StatelessWidget {

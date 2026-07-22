@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/auth_feature/data/models/login_response_model.dart';
+import 'package:doc_doc/features/auth_feature/data/models/login_response_model.dart';
 import 'package:doc_doc/core/networking/errors/models/error_model.dart';
 
 abstract class LoginState {}

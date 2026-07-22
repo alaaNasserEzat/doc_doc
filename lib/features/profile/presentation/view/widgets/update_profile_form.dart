@@ -1,10 +1,10 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/custom_widgets/custom_dailog.dart';
 import 'package:doc_doc/core/custom_widgets/custom_text_form_filed.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/gender_selection_widgets.dart';
-import 'package:doc_doc/core/features/profile/data/models/update_profile_request.dart';
-import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
-import 'package:doc_doc/core/features/profile/presentation/view_model/profile_state.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/gender_selection_widgets.dart';
+import 'package:doc_doc/features/profile/data/models/update_profile_request.dart';
+import 'package:doc_doc/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/features/profile/presentation/view_model/profile_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

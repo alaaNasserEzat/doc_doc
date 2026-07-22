@@ -1,7 +1,7 @@
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
-import 'package:doc_doc/core/features/home_feature/data/repo/home_repo.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/home_feature/data/models/specialization_data.dart';
+import 'package:doc_doc/features/home_feature/data/repo/home_repo.dart';
+import 'package:doc_doc/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeState> {

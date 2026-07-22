@@ -1,11 +1,11 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/custom_widgets/custom_dailog.dart';
 import 'package:doc_doc/core/custom_widgets/custom_text_form_filed.dart';
-import 'package:doc_doc/core/features/auth_feature/data/models/sign_up_request_body.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/view_model/sign_up_state.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/gender_selection_widgets.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/password_validation_row.dart';
+import 'package:doc_doc/features/auth_feature/data/models/sign_up_request_body.dart';
+import 'package:doc_doc/features/auth_feature/presentation/view_model/sign_up_cubit.dart';
+import 'package:doc_doc/features/auth_feature/presentation/view_model/sign_up_state.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/gender_selection_widgets.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/password_validation_row.dart';
 import 'package:doc_doc/core/helper/app_regex.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/utils/app_color.dart';

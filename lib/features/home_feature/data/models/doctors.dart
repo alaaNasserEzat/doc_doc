@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/home_feature/data/models/city.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/specialization.dart';
+import 'package:doc_doc/features/home_feature/data/models/city.dart';
+import 'package:doc_doc/features/home_feature/data/models/specialization.dart';
 
 class Doctor {
   final int? id;

@@ -1,6 +1,6 @@
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/have_account_widget.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/sign_up_form.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/term_and_condition_widget.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/have_account_widget.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/sign_up_form.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/term_and_condition_widget.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';

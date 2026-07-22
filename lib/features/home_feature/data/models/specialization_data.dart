@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
 
 class SpecializationData {
   final int? id;

@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_data.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/appointemt_item.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_data.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/appointemt_item.dart';
 import 'package:flutter/material.dart';
 
 class AllAppointmentList extends StatelessWidget {

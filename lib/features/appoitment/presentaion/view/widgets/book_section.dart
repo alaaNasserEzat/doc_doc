@@ -1,10 +1,10 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/custom_widgets/custom_dailog.dart';
 import 'package:doc_doc/core/custom_widgets/success_dailog.dart';
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_request_body.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appointment_state.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_request_body.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view_model/appointment_state.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

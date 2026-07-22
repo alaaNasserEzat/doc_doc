@@ -1,6 +1,6 @@
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_reponse.dart';
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_request_body.dart';
-import 'package:doc_doc/core/features/appoitment/data/models/get_all_appointment_response.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_reponse.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_request_body.dart';
+import 'package:doc_doc/features/appoitment/data/models/get_all_appointment_response.dart';
 import 'package:doc_doc/core/networking/api_concumer.dart';
 import 'package:doc_doc/core/networking/api_constants.dart';
 

@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/search/presentation/view_model/search_state.dart';
+import 'package:doc_doc/features/search/presentation/view_model/search_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/repo/search_repo.dart';
 

@@ -1,8 +1,8 @@
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/booking_widget.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_bloc_builder.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_bloc_builder.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/see_all_row.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/welcom_widget.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/booking_widget.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_bloc_builder.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_specialest_bloc_builder.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/see_all_row.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/welcom_widget.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:doc_doc/core/utils/app_color.dart';

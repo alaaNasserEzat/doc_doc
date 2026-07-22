@@ -1,5 +1,5 @@
 import 'package:doc_doc/core/custom_widgets/custom_app_bar.dart';
-import 'package:doc_doc/core/features/profile/presentation/view/widgets/update_profile_form.dart';
+import 'package:doc_doc/features/profile/presentation/view/widgets/update_profile_form.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';

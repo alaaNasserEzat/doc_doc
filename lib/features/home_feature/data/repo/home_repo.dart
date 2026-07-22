@@ -1,6 +1,6 @@
 import 'package:dart_either/dart_either.dart';
-import 'package:doc_doc/core/features/home_feature/data/data_source/home_remote_data_source.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/specialization_response.dart';
+import 'package:doc_doc/features/home_feature/data/data_source/home_remote_data_source.dart';
+import 'package:doc_doc/features/home_feature/data/models/specialization_response.dart';
 import 'package:doc_doc/core/networking/errors/models/error_model.dart';
 import 'package:doc_doc/core/networking/errors/server_exception.dart';
 

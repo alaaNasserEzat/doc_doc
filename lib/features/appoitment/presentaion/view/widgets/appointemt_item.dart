@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_data.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/white_shadwo_container.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_data.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/white_shadwo_container.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';

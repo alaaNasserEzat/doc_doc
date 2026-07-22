@@ -1,6 +1,6 @@
 import 'package:doc_doc/core/custom_widgets/custom_text_form_filed.dart';
-import 'package:doc_doc/core/features/search/presentation/view/widgets/search_list.dart';
-import 'package:doc_doc/core/features/search/presentation/view_model/search_cubit.dart';
+import 'package:doc_doc/features/search/presentation/view/widgets/search_list.dart';
+import 'package:doc_doc/features/search/presentation/view_model/search_cubit.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
-import 'package:doc_doc/core/features/profile/data/models/update_profile_request.dart';
-import 'package:doc_doc/core/features/profile/data/repo/profile_repo.dart';
-import 'package:doc_doc/core/features/profile/presentation/view_model/profile_state.dart';
+import 'package:doc_doc/features/profile/data/models/update_profile_request.dart';
+import 'package:doc_doc/features/profile/data/repo/profile_repo.dart';
+import 'package:doc_doc/features/profile/presentation/view_model/profile_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

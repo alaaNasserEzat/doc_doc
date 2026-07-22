@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/home_feature/data/models/governrate.dart';
+import 'package:doc_doc/features/home_feature/data/models/governrate.dart';
 
 class City {
   final int? id;

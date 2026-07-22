@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/appoitment/data/models/patient.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/appoitment/data/models/patient.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
 
 class AppointmentData {
   final int id;

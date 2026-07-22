@@ -1,7 +1,7 @@
-import 'package:doc_doc/core/features/profile/presentation/view/widgets/profile_info_section.dart';
-import 'package:doc_doc/core/features/profile/presentation/view/widgets/profile_skeletonizer.dart';
-import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
-import 'package:doc_doc/core/features/profile/presentation/view_model/profile_state.dart';
+import 'package:doc_doc/features/profile/presentation/view/widgets/profile_info_section.dart';
+import 'package:doc_doc/features/profile/presentation/view/widgets/profile_skeletonizer.dart';
+import 'package:doc_doc/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/features/profile/presentation/view_model/profile_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

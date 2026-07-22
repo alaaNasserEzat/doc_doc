@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_reponse.dart';
-import 'package:doc_doc/core/features/appoitment/data/models/get_all_appointment_response.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_reponse.dart';
+import 'package:doc_doc/features/appoitment/data/models/get_all_appointment_response.dart';
 import 'package:doc_doc/core/networking/errors/models/error_model.dart';
 
 abstract class AppointmentState {}

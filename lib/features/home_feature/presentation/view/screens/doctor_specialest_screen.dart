@@ -1,7 +1,7 @@
 import 'package:doc_doc/core/custom_widgets/custom_app_bar.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_specialest_widget.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_cubit.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view_model/home_state.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_specialest_widget.dart';
+import 'package:doc_doc/features/home_feature/presentation/view_model/home_cubit.dart';
+import 'package:doc_doc/features/home_feature/presentation/view_model/home_state.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
 import 'package:doc_doc/core/routs/routes.dart';

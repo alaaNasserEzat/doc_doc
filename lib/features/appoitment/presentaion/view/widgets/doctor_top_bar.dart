@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/custom_blue_container.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/custom_blue_container.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/images/app_assets.dart';
 import 'package:doc_doc/core/utils/app_color.dart';

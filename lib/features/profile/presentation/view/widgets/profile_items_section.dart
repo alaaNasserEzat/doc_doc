@@ -1,7 +1,7 @@
-import 'package:doc_doc/core/features/profile/presentation/view/screens/update_profile_screen.dart';
-import 'package:doc_doc/core/features/profile/presentation/view/widgets/item.dart';
-import 'package:doc_doc/core/features/profile/presentation/view/widgets/logout_dailog.dart';
-import 'package:doc_doc/core/features/profile/presentation/view_model/profile_cubit.dart';
+import 'package:doc_doc/features/profile/presentation/view/screens/update_profile_screen.dart';
+import 'package:doc_doc/features/profile/presentation/view/widgets/item.dart';
+import 'package:doc_doc/features/profile/presentation/view/widgets/logout_dailog.dart';
+import 'package:doc_doc/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';

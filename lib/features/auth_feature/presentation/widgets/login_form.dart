@@ -1,10 +1,10 @@
 import 'package:doc_doc/core/custom_widgets/custom_btn.dart';
 import 'package:doc_doc/core/custom_widgets/custom_dailog.dart';
 import 'package:doc_doc/core/custom_widgets/custom_text_form_filed.dart';
-import 'package:doc_doc/core/features/auth_feature/data/models/login_request.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_cubit.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/view_model/login_state.dart';
-import 'package:doc_doc/core/features/auth_feature/presentation/widgets/forget_password_row.dart';
+import 'package:doc_doc/features/auth_feature/data/models/login_request.dart';
+import 'package:doc_doc/features/auth_feature/presentation/view_model/login_cubit.dart';
+import 'package:doc_doc/features/auth_feature/presentation/view_model/login_state.dart';
+import 'package:doc_doc/features/auth_feature/presentation/widgets/forget_password_row.dart';
 import 'package:doc_doc/core/helper/extention.dart';
 import 'package:doc_doc/core/routs/routes.dart';
 import 'package:flutter/material.dart';

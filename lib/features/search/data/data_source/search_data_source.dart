@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/search/data/models/search_response.dart';
+import 'package:doc_doc/features/search/data/models/search_response.dart';
 import 'package:doc_doc/core/networking/api_concumer.dart';
 import 'package:doc_doc/core/networking/api_constants.dart';
 

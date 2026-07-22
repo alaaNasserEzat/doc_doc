@@ -1,9 +1,9 @@
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/book_section.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/choose_time_section.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_information.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/doctor_top_bar.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/select_date_section.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/book_section.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/choose_time_section.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_information.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/doctor_top_bar.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/select_date_section.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
 

@@ -1,8 +1,8 @@
 import 'package:dart_either/dart_either.dart';
-import 'package:doc_doc/core/features/profile/data/data_source/profile_remote_data_source.dart';
-import 'package:doc_doc/core/features/profile/data/models/profile_response.dart';
-import 'package:doc_doc/core/features/profile/data/models/update_profile_request.dart';
-import 'package:doc_doc/core/features/profile/data/models/update_profile_response.dart';
+import 'package:doc_doc/features/profile/data/data_source/profile_remote_data_source.dart';
+import 'package:doc_doc/features/profile/data/models/profile_response.dart';
+import 'package:doc_doc/features/profile/data/models/update_profile_request.dart';
+import 'package:doc_doc/features/profile/data/models/update_profile_response.dart';
 import 'package:doc_doc/core/networking/errors/models/error_model.dart';
 import 'package:doc_doc/core/networking/errors/server_exception.dart';
 

@@ -1,8 +1,8 @@
 import 'package:doc_doc/core/custom_widgets/empty_widget.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/all_appointment_list.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/appointment_skeletonizer_list.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appointment_state.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/all_appointment_list.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/appointment_skeletonizer_list.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view_model/appointment_state.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

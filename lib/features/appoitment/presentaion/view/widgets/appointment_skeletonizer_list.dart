@@ -1,10 +1,10 @@
-import 'package:doc_doc/core/features/appoitment/data/models/appointment_data.dart';
-import 'package:doc_doc/core/features/appoitment/data/models/patient.dart';
-import 'package:doc_doc/core/features/appoitment/presentaion/view/widgets/appointemt_item.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/city.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/governrate.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/specialization.dart';
+import 'package:doc_doc/features/appoitment/data/models/appointment_data.dart';
+import 'package:doc_doc/features/appoitment/data/models/patient.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view/widgets/appointemt_item.dart';
+import 'package:doc_doc/features/home_feature/data/models/city.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/home_feature/data/models/governrate.dart';
+import 'package:doc_doc/features/home_feature/data/models/specialization.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

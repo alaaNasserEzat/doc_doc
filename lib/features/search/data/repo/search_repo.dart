@@ -1,6 +1,6 @@
 import 'package:dart_either/dart_either.dart';
-import 'package:doc_doc/core/features/search/data/data_source/search_data_source.dart';
-import 'package:doc_doc/core/features/search/data/models/search_response.dart';
+import 'package:doc_doc/features/search/data/data_source/search_data_source.dart';
+import 'package:doc_doc/features/search/data/models/search_response.dart';
 import 'package:doc_doc/core/networking/errors/models/error_model.dart';
 import 'package:doc_doc/core/networking/errors/server_exception.dart';
 

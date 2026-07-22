@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/home_feature/data/models/specialization_data.dart';
+import 'package:doc_doc/features/home_feature/data/models/specialization_data.dart';
 
 class SpecializationResponse {
   final List<SpecializationData>? data;

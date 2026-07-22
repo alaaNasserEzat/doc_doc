@@ -1,8 +1,8 @@
-import 'package:doc_doc/core/features/home_feature/data/models/city.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/doctors.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/governrate.dart';
-import 'package:doc_doc/core/features/home_feature/data/models/specialization.dart';
-import 'package:doc_doc/core/features/home_feature/presentation/view/widgets/doctor_list.dart';
+import 'package:doc_doc/features/home_feature/data/models/city.dart';
+import 'package:doc_doc/features/home_feature/data/models/doctors.dart';
+import 'package:doc_doc/features/home_feature/data/models/governrate.dart';
+import 'package:doc_doc/features/home_feature/data/models/specialization.dart';
+import 'package:doc_doc/features/home_feature/presentation/view/widgets/doctor_list.dart';
 import 'package:flutter/widgets.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

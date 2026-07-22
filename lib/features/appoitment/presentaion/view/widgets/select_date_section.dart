@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
+import 'package:doc_doc/features/appoitment/presentaion/view_model/appoitment_cubit.dart';
 import 'package:doc_doc/core/utils/app_color.dart';
 import 'package:doc_doc/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';

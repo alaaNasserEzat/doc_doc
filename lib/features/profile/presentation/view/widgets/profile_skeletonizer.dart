@@ -1,5 +1,5 @@
-import 'package:doc_doc/core/features/profile/data/models/user_data.dart';
-import 'package:doc_doc/core/features/profile/presentation/view/widgets/profile_info_section.dart';
+import 'package:doc_doc/features/profile/data/models/user_data.dart';
+import 'package:doc_doc/features/profile/presentation/view/widgets/profile_info_section.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/profile/data/models/user_data.dart';
+import 'package:doc_doc/features/profile/data/models/user_data.dart';
 
 class ProfileResponse {
   final String message;

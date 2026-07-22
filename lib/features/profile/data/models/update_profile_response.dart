@@ -1,4 +1,4 @@
-import 'package:doc_doc/core/features/profile/data/models/update_user_data.dart';
+import 'package:doc_doc/features/profile/data/models/update_user_data.dart';
 
 class UpdateProfileResponse {
   final String message;
